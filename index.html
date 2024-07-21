@@ -7,6 +7,57 @@
       name="description"
       content="American comedian Theo Von has been in the podcast game since 2016 but, his new podcast venture This Past Weekend brings lots of depth with personal and heart-felt conversations intertwined with Theo's out-of-the-pocket humour."
     />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asset&family=Kalnia:wght@100..700&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Kalnia", serif;
+      }
+
+      header {
+        background-color: #142332;
+        text-align: center;
+        padding: 200px 0px;
+        color: antiquewhite;
+      }
+      header h1 {
+        font-family: "Asset", serif;
+        font-size: 34px;
+      }
+      header h3 {
+        margin-top: 30px;
+        letter-spacing: 6px;
+      }
+
+      main section {
+        text-align: center;
+      }
+
+      footer {
+        padding: 60px 0px;
+        text-align: center;
+      }
+
+      .credits {
+        font-family: monospace;
+        text-align: center;
+        font-style: italic;
+      }
+    </style>
+
     <title>This Past Weekend - Theo Von</title>
   </head>
   <body>
@@ -15,9 +66,14 @@
       <h3>Theo Von</h3>
     </header>
     <main>
-      <section>
-        <h4>About the podcasts</h4>
-        <p>This is text about the podcasts</p>
+      <section class="about">
+        <div class="row">
+          <div class="information col-6">
+            <h4>About the podcasts</h4>
+            <p>This is text about the podcasts</p>
+          </div>
+          <div class="col-6">This is an image</div>
+        </div>
       </section>
       <section>
         <h4>Favourite Podcasts</h4>
@@ -26,9 +82,14 @@
       </section>
     </main>
     <footer>
-      <div>Find out more</div>
-      <div>Theo Von Official Shop</div>
-      <div>Tour Dates</div>
+      <div class="row">
+        <div class="col-4">Find out more</div>
+        <div class="col-4">Theo Von Official Shop</div>
+        <div class="col-4">Tour Dates</div>
+      </div>
     </footer>
+    <div class="credits">
+      This site was coded by Karina Wong for the SheCodes Challenge!
+    </div>
   </body>
 </html>
