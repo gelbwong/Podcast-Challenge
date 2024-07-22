@@ -36,11 +36,16 @@
       }
       header h1 {
         font-family: "Asset", serif;
-        font-size: 34px;
+
+        margin-top: 140px;
+        font-size: clamp(2.3rem, 5vw, 5rem);
       }
+
       header h3 {
         margin-top: 30px;
         letter-spacing: 6px;
+        font-size: 50px;
+        margin: 140px 0px;
       }
 
       main section {
@@ -49,24 +54,28 @@
         background-color: rgb(221, 205, 186);
         color: #142332;
       }
-
-      section h4 {
-        font-size: 38px;
-      }
-
-      .information img {
-        padding-right: 20px;
+      .information h4 {
+        font-size: clamp(2rem, 3.3vw, 3.7rem);
       }
       .information p {
         padding: 0px 40px;
+        font-size: clamp(1rem, 1.8vw, 1.9rem);
       }
+      .information img {
+        padding-right: 20px;
+      }
+      /*
+      rem vw rem
+      2, 3.3, 3.7
+      */
 
       .favourite-podcasts {
         background-color: rgb(122, 101, 142);
         color: rgb(221, 205, 186);
       }
       .favourite-podcasts h3 {
-        font-size: 40px;
+        font-size: clamp(2rem, 3.5vw, 4.5rem);
+        margin-top: 150px;
         font-family: "Asset", serif;
       }
       .favourite-podcasts img {
@@ -75,12 +84,15 @@
       .favourite-podcasts a:hover {
         opacity: 0.7;
       }
+      .favourite-podcasts h4 {
+        font-size: clamp(1.8rem, 2.8vw, 4rem);
+      }
       .favourite-podcasts .favourite-text {
         margin: 30px 80px 0px 80px;
         font-family: "Playfair", serif;
       }
       .favourite-text p {
-        font-size: 20px;
+        font-size: clamp(1.3rem, 1.6vw, 2.4rem);
         font-weight: 300;
       }
 
@@ -91,7 +103,7 @@
       footer a {
         text-decoration: none;
         color: #142332;
-        font-size: 20px;
+        font-size: clamp(1rem, 1.8vw, 2.4rem);
       }
       footer a:hover {
         color: blue;
@@ -101,17 +113,21 @@
         font-family: monospace;
         text-align: center;
         font-style: italic;
+        font-size: clamp(0.7rem, 1vw, 1.2rem);
       }
 
-      @media (max-width: 1260px) {
-        .favourite-text p {
-          font-size: 18px;
+      @media (max-width: 1440px) {
+        header h1 {
+          margin-top: 50px;
         }
+        header h3 {
+          margin-top: 30px;
+          letter-spacing: 6px;
+        }
+      }
+      @media (max-width: 1260px) {
         .favourite-podcasts .favourite-text {
           margin: 30px 30px 0px 30px;
-        }
-        .favourite-podcasts h4 {
-          font-size: 34px;
         }
       }
 
@@ -121,18 +137,11 @@
         }
       }
       @media (max-width: 992px) {
-        header h1 {
-          font-size: 30px;
-        }
         .favourite-podcasts .favourite-text {
           padding: 0px 70px;
         }
         .favourite-podcasts img {
           padding: 0px 70px;
-        }
-        footer a,
-        .credits {
-          font-size: 18px !important;
         }
       }
       @media (max-width: 768px) {
@@ -160,27 +169,13 @@
           padding: 0px 20px;
         }
       }
-      @media (max-width: 690px) {
-        header h1 {
-          font-size: 25px;
-        }
-        .favourite-podcasts h3 {
-          font-size: 40px !important;
-        }
-      }
+
       @media (max-width: 540px) {
-        header h1 {
-          font-size: 23px;
-        }
         .favourite-podcasts .favourite-text {
           padding: 0px 10px;
         }
         .favourite-podcasts img {
           padding: 0px 10px;
-        }
-        footer a,
-        .credits {
-          font-size: 15px !important;
         }
       }
     </style>
@@ -214,7 +209,7 @@
       <section class="favourite-podcasts">
         <h3>Favourite Podcasts</h3>
 
-        <div class="row mt-5">
+        <div class="row mt-5 ed-sheeran">
           <div class="col-12 col-lg-6">
             <h4>Ed Sheeran</h4>
             <div class="favourite-text">
@@ -244,7 +239,7 @@
               />
             </a>
           </div>
-          <div class="row mt-5">
+          <div class="row mt-5 sean-strickland">
             <div class="col-12 col-lg-6">
               <h4>Sean Strickland</h4>
               <div class="favourite-text">
