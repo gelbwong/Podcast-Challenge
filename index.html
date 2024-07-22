@@ -57,6 +57,9 @@
       .information img {
         padding-right: 20px;
       }
+      .information p {
+        padding: 0px 40px;
+      }
 
       .favourite-podcasts {
         background-color: rgb(122, 101, 142);
@@ -127,6 +130,35 @@
         .favourite-podcasts img {
           padding: 0px 70px;
         }
+        footer a,
+        .credits {
+          font-size: 18px !important;
+        }
+      }
+      @media (max-width: 768px) {
+        main section {
+          background-color: rgba(221, 205, 186, 0.759);
+        }
+        section.about {
+          position: relative;
+        }
+        section.about::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/134/684/original/banksy-rat.png?1721593932);
+          background-color: rgba(62, 53, 53, 0.9);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 300px;
+          z-index: -1;
+        }
+        .information p {
+          padding: 0px 20px;
+        }
       }
       @media (max-width: 690px) {
         header h1 {
@@ -134,6 +166,21 @@
         }
         .favourite-podcasts h3 {
           font-size: 40px !important;
+        }
+      }
+      @media (max-width: 540px) {
+        header h1 {
+          font-size: 23px;
+        }
+        .favourite-podcasts .favourite-text {
+          padding: 0px 10px;
+        }
+        .favourite-podcasts img {
+          padding: 0px 10px;
+        }
+        footer a,
+        .credits {
+          font-size: 15px !important;
         }
       }
     </style>
@@ -148,11 +195,14 @@
     <main>
       <section class="about">
         <div class="row information">
-          <div class="col-6">
+          <div class="col-12 col-md-6">
             <h4 class="mt-5">About the podcasts</h4>
-            <p class="mt-4">This is text about the podcasts</p>
+            <p class="mt-4">
+              Though the conversation maybe on what the guest/Theo does on the
+              weekend
+            </p>
           </div>
-          <div class="col-6">
+          <div class="d-none d-md-block col-6">
             <img
               src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/134/739/original/this-past-weekend-logo.jpg?1721618717"
               alt="This Past Weekend with Theo Von Logo"
@@ -215,6 +265,7 @@
                 href="https://www.youtube.com/watch?v=SRLljn_GEHk"
                 target="_blank"
                 title="Watch podcast on YouTube"
+                class="text-center"
               >
                 <img
                   src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/134/741/original/sean-stricklan-theo-von.jpg?1721619933"
