@@ -25,6 +25,7 @@
     <style>
       body {
         font-family: "Kalnia", serif;
+        background-color: rgb(174, 174, 174);
       }
 
       header {
@@ -44,17 +45,96 @@
 
       main section {
         text-align: center;
+        padding: 70px 0px;
+        background-color: rgb(221, 205, 186);
+        color: #142332;
+      }
+
+      section h4 {
+        font-size: 38px;
+      }
+
+      .information img {
+        padding-right: 20px;
+      }
+
+      .favourite-podcasts {
+        background-color: rgb(122, 101, 142);
+        color: rgb(221, 205, 186);
+      }
+      .favourite-podcasts h3 {
+        font-size: 40px;
+        font-family: "Asset", serif;
+      }
+      .favourite-podcasts img {
+        padding: 0px 20px;
+      }
+      .favourite-podcasts a:hover {
+        opacity: 0.7;
+      }
+      .favourite-podcasts .favourite-text {
+        margin: 30px 80px 0px 80px;
+        font-family: "Playfair", serif;
+      }
+      .favourite-text p {
+        font-size: 20px;
+        font-weight: 300;
       }
 
       footer {
         padding: 60px 0px;
         text-align: center;
       }
+      footer a {
+        text-decoration: none;
+        color: #142332;
+        font-size: 20px;
+      }
+      footer a:hover {
+        color: blue;
+      }
 
       .credits {
         font-family: monospace;
         text-align: center;
         font-style: italic;
+      }
+
+      @media (max-width: 1260px) {
+        .favourite-text p {
+          font-size: 18px;
+        }
+        .favourite-podcasts .favourite-text {
+          margin: 30px 30px 0px 30px;
+        }
+        .favourite-podcasts h4 {
+          font-size: 34px;
+        }
+      }
+
+      @media (max-width: 1100px) {
+        .favourite-podcasts .favourite-text {
+          margin: 10px 20px 0px 20px;
+        }
+      }
+      @media (max-width: 992px) {
+        header h1 {
+          font-size: 30px;
+        }
+        .favourite-podcasts .favourite-text {
+          padding: 0px 70px;
+        }
+        .favourite-podcasts img {
+          padding: 0px 70px;
+        }
+      }
+      @media (max-width: 690px) {
+        header h1 {
+          font-size: 25px;
+        }
+        .favourite-podcasts h3 {
+          font-size: 40px !important;
+        }
       }
     </style>
 
@@ -67,29 +147,106 @@
     </header>
     <main>
       <section class="about">
-        <div class="row">
-          <div class="information col-6">
-            <h4>About the podcasts</h4>
-            <p>This is text about the podcasts</p>
+        <div class="row information">
+          <div class="col-6">
+            <h4 class="mt-5">About the podcasts</h4>
+            <p class="mt-4">This is text about the podcasts</p>
           </div>
-          <div class="col-6">This is an image</div>
+          <div class="col-6">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/134/739/original/this-past-weekend-logo.jpg?1721618717"
+              alt="This Past Weekend with Theo Von Logo"
+              class="img-fluid"
+            />
+          </div>
         </div>
       </section>
-      <section>
-        <h4>Favourite Podcasts</h4>
-        <div>This is a favourite podcast</div>
-        <div>This is a favourite podcast</div>
+      <section class="favourite-podcasts">
+        <h3>Favourite Podcasts</h3>
+
+        <div class="row mt-5">
+          <div class="col-12 col-lg-6">
+            <h4>Ed Sheeran</h4>
+            <div class="favourite-text">
+              <p>
+                Theo's comedy world tour has recently landed him in England and
+                he was able to interview world famous singer Ed Sheeran.
+              </p>
+              <p>
+                This discussion with the different backgrounds of louisiana
+                American and Halifax English is quite refreshing. Though Theo
+                joked that americans should consider returning, they both
+                discuss differences in cultures from their personal experiences.
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <a
+              href="https://www.youtube.com/watch?v=Guspc7G92Gs"
+              target="_blank"
+              title="Watch podcast on YouTube"
+              class="text-center"
+            >
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/134/745/original/ed-sheeran-theo-von.jpg?1721629782"
+                alt="Screenshot of Ed Sheeran and Theo Von This Past Weekend Podcast Thumbnail"
+                class="img-fluid"
+              />
+            </a>
+          </div>
+          <div class="row mt-5">
+            <div class="col-12 col-lg-6">
+              <h4>Sean Strickland</h4>
+              <div class="favourite-text">
+                <p>
+                  In Theo's interview with rising MMA favourite Sean Strickland,
+                  we get to see a different perspective into their lives.
+                </p>
+                <p>
+                  There are many tangents and tales but the true beauty in
+                  Theo's podcasting style is the way he is able to make any
+                  guest feel comfortable to speak their own tale and gives them
+                  the space to breathe without forcing or looking for a scoop.
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <a
+                href="https://www.youtube.com/watch?v=SRLljn_GEHk"
+                target="_blank"
+                title="Watch podcast on YouTube"
+              >
+                <img
+                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/134/741/original/sean-stricklan-theo-von.jpg?1721619933"
+                  alt="Screenshot of Sean Strickland and Theo Von This Past Weekend Podcast Thumbnail"
+                  class="img-fluid"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     <footer>
       <div class="row">
-        <div class="col-4">Find out more</div>
-        <div class="col-4">Theo Von Official Shop</div>
-        <div class="col-4">Tour Dates</div>
+        <div class="col-4">
+          <a href="https://www.theovon.com/podcast" target="_blank"
+            >Find out more</a
+          >
+        </div>
+        <div class="col-4">
+          <a href="https://www.theovonstore.com" target="_blank"
+            >Theo Von Official Shop</a
+          >
+        </div>
+        <div class="col-4">
+          <a href="https://www.theovon.com/tour" target="_blank">Tour Dates</a>
+        </div>
       </div>
     </footer>
     <div class="credits">
       This site was coded by Karina Wong for the SheCodes Challenge!
     </div>
+    `
   </body>
 </html>
