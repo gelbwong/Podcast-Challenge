@@ -26,6 +26,24 @@
       body {
         font-family: "Kalnia", serif;
         background-color: rgb(174, 174, 174);
+
+        background-image: linear-gradient(
+          rgba(255, 255, 255, 0.716),
+          rgba(40, 40, 40, 0.5)
+        );
+        filter: url(#grainy);
+
+        /*background-color: rgb(210, 206, 200);*/
+      }
+
+      .container {
+        --bs-gutter-x: 0px !important;
+        margin: 0px !important;
+        max-width: 100% !important;
+      }
+
+      .row {
+        margin: 0px;
       }
 
       header {
@@ -36,38 +54,66 @@
       }
       header h1 {
         font-family: "Asset", serif;
-
-        margin-top: 140px;
+        padding: 0px 20px;
+        margin-top: 7vw;
         font-size: clamp(2.3rem, 5vw, 5rem);
       }
 
       header h3 {
         margin-top: 30px;
         letter-spacing: 6px;
-        font-size: 50px;
+        font-size: clamp(2.1rem, 4vw, 4.5rem);
         margin: 140px 0px;
       }
 
       main section {
         text-align: center;
-        padding: 70px 0px;
+        padding: 50px 5px 70px 5px;
         background-color: rgb(221, 205, 186);
         color: #142332;
       }
+
+      section.about {
+        box-shadow: 0 -5px 6px 0px rgb(221, 205, 186),
+          0 5px 6px 0px rgb(122, 101, 142);
+      }
+
+      section.favourite-podcasts {
+        box-shadow: 0 -5px 6px 0px rgb(122, 101, 142),
+          0 5px 6px 0px rgb(122, 101, 142);
+      }
+
+      section.spotify {
+        background-color: rgb(92, 153, 154);
+        box-shadow: 0 -5px 6px 0px rgb(92, 153, 154),
+          0 5px 6px 0px rgb(92, 153, 154);
+      }
+
+      .information .text {
+        padding: 0px 0px 0px 30px !important;
+      }
       .information h4 {
         font-size: clamp(2rem, 3.3vw, 3.7rem);
+        padding-top: 20px;
       }
       .information p {
-        padding: 0px 40px;
+        margin: 0 auto;
+        margin-top: clamp(1.5rem, 2vw, 3rem);
+        line-height: 2;
+        width: clamp(16rem, 36vw, 70rem);
         font-size: clamp(1rem, 1.8vw, 1.9rem);
       }
       .information img {
-        padding-right: 20px;
+        margin: 0 auto;
+        width: clamp(20rem, 38vw, 34rem);
+        box-shadow: #9d2f368b 5px 5px, #9d2f3664 10px 10px, #9d2f364f 15px 15px,
+          rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
       }
-      /*
-      rem vw rem
-      2, 3.3, 3.7
-      */
+
+      .information .img-div,
+      .favourite-podcasts .img-div {
+        align-items: center !important;
+      }
 
       .favourite-podcasts {
         background-color: rgb(122, 101, 142);
@@ -75,7 +121,7 @@
       }
       .favourite-podcasts h3 {
         font-size: clamp(2rem, 3.5vw, 4.5rem);
-        margin-top: 150px;
+        margin-top: 5vw;
         font-family: "Asset", serif;
       }
       .favourite-podcasts img {
@@ -88,12 +134,25 @@
         font-size: clamp(1.8rem, 2.8vw, 4rem);
       }
       .favourite-podcasts .favourite-text {
-        margin: 30px 80px 0px 80px;
+        margin: 30px 70px 0px 70px;
         font-family: "Playfair", serif;
       }
       .favourite-text p {
         font-size: clamp(1.3rem, 1.6vw, 2.4rem);
         font-weight: 300;
+      }
+
+      .favourite-podcasts .ed-sheeran {
+        margin-top: clamp(5rem, 9vw, 15rem);
+      }
+
+      .spotify h3 {
+        padding: 90px 0px 50px 0px;
+
+        font-size: clamp(1.4rem, 3vw, 4rem);
+      }
+      .spotify .podcast-spotify {
+        padding: 0px 30px;
       }
 
       footer {
@@ -105,7 +164,8 @@
         color: #142332;
         font-size: clamp(1rem, 1.8vw, 2.4rem);
       }
-      footer a:hover {
+      footer a:hover,
+      .credits a:hover {
         color: blue;
       }
 
@@ -114,36 +174,18 @@
         text-align: center;
         font-style: italic;
         font-size: clamp(0.7rem, 1vw, 1.2rem);
+        padding-bottom: 20px;
+      }
+      .credits a {
+        color: rgb(61, 61, 61);
       }
 
       @media (max-width: 1440px) {
-        header h1 {
-          margin-top: 50px;
-        }
         header h3 {
-          margin-top: 30px;
           letter-spacing: 6px;
         }
       }
-      @media (max-width: 1260px) {
-        .favourite-podcasts .favourite-text {
-          margin: 30px 30px 0px 30px;
-        }
-      }
 
-      @media (max-width: 1100px) {
-        .favourite-podcasts .favourite-text {
-          margin: 10px 20px 0px 20px;
-        }
-      }
-      @media (max-width: 992px) {
-        .favourite-podcasts .favourite-text {
-          padding: 0px 70px;
-        }
-        .favourite-podcasts img {
-          padding: 0px 70px;
-        }
-      }
       @media (max-width: 768px) {
         main section {
           background-color: rgba(221, 205, 186, 0.759);
@@ -165,17 +207,20 @@
           background-size: 300px;
           z-index: -1;
         }
-        .information p {
-          padding: 0px 20px;
+      }
+      @media (max-width: 550px) {
+        .favourite-podcasts .favourite-text {
+          margin-left: 30px !important;
+          margin-right: 30px !important;
         }
       }
 
-      @media (max-width: 540px) {
-        .favourite-podcasts .favourite-text {
-          padding: 0px 10px;
+      @media (max-width: 358px) {
+        header h1 {
+          font-size: 30px !important;
         }
-        .favourite-podcasts img {
-          padding: 0px 10px;
+        .information .text {
+          padding: 0px !important;
         }
       }
     </style>
@@ -183,116 +228,164 @@
     <title>This Past Weekend - Theo Von</title>
   </head>
   <body>
-    <header>
-      <h1>This Past Weekend</h1>
-      <h3>Theo Von</h3>
-    </header>
-    <main>
-      <section class="about">
-        <div class="row information">
-          <div class="col-12 col-md-6">
-            <h4 class="mt-5">About the podcasts</h4>
-            <p class="mt-4">
-              Though the conversation maybe on what the guest/Theo does on the
-              weekend
-            </p>
-          </div>
-          <div class="d-none d-md-block col-6">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/134/739/original/this-past-weekend-logo.jpg?1721618717"
-              alt="This Past Weekend with Theo Von Logo"
-              class="img-fluid"
-            />
-          </div>
-        </div>
-      </section>
-      <section class="favourite-podcasts">
-        <h3>Favourite Podcasts</h3>
-
-        <div class="row mt-5 ed-sheeran">
-          <div class="col-12 col-lg-6">
-            <h4>Ed Sheeran</h4>
-            <div class="favourite-text">
-              <p>
-                Theo's comedy world tour has recently landed him in England and
-                he was able to interview world famous singer Ed Sheeran.
-              </p>
-              <p>
-                This discussion with the different backgrounds of louisiana
-                American and Halifax English is quite refreshing. Though Theo
-                joked that americans should consider returning, they both
-                discuss differences in cultures from their personal experiences.
-              </p>
-            </div>
-          </div>
-          <div class="col-12 col-lg-6">
-            <a
-              href="https://www.youtube.com/watch?v=Guspc7G92Gs"
-              target="_blank"
-              title="Watch podcast on YouTube"
-              class="text-center"
-            >
-              <img
-                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/134/745/original/ed-sheeran-theo-von.jpg?1721629782"
-                alt="Screenshot of Ed Sheeran and Theo Von This Past Weekend Podcast Thumbnail"
-                class="img-fluid"
-              />
-            </a>
-          </div>
-          <div class="row mt-5 sean-strickland">
-            <div class="col-12 col-lg-6">
-              <h4>Sean Strickland</h4>
-              <div class="favourite-text">
+    <svg width="0" height="0" class="d-none">
+      <filter id="grainy" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency=".8"></feTurbulence>
+        <feColorMatrix type="saturate" values="0"></feColorMatrix>
+        <feBlend mode="multiply" in="SourceGraphic"></feBlend>
+      </filter>
+    </svg>
+    <div class="container">
+      <div class="padding-container">
+        <header>
+          <h1>This Past Weekend</h1>
+          <h3>Theo Von</h3>
+        </header>
+        <main>
+          <section class="about">
+            <div class="row information">
+              <div class="col-12 col-md-6 text">
+                <h4>About the podcasts</h4>
                 <p>
-                  In Theo's interview with rising MMA favourite Sean Strickland,
-                  we get to see a different perspective into their lives.
+                  Though the conversation maybe on what the guest/Theo does on
+                  the weekend, it sure is entertaining and often times
+                  philisophical.
                 </p>
                 <p>
-                  There are many tangents and tales but the true beauty in
-                  Theo's podcasting style is the way he is able to make any
-                  guest feel comfortable to speak their own tale and gives them
-                  the space to breathe without forcing or looking for a scoop.
+                  Theo has a natural charisma and sincere humility, that create
+                  an environment which can handle both light hearted banter to
+                  serious and painful topics.
                 </p>
               </div>
-            </div>
-            <div class="col-12 col-lg-6">
-              <a
-                href="https://www.youtube.com/watch?v=SRLljn_GEHk"
-                target="_blank"
-                title="Watch podcast on YouTube"
-                class="text-center"
-              >
+              <div class="d-none d-md-flex col-md-6 img-div">
                 <img
-                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/134/741/original/sean-stricklan-theo-von.jpg?1721619933"
-                  alt="Screenshot of Sean Strickland and Theo Von This Past Weekend Podcast Thumbnail"
+                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/134/935/original/this-past-weekend-logo.jpg?1721698584"
+                  alt="This Past Weekend with Theo Von Logo"
                   class="img-fluid"
                 />
-              </a>
+              </div>
+            </div>
+          </section>
+          <section class="favourite-podcasts">
+            <h3>Favourite Podcasts</h3>
+
+            <div class="row ed-sheeran">
+              <div class="col-12 col-lg-6">
+                <h4>Ed Sheeran</h4>
+                <div class="favourite-text">
+                  <p>
+                    Theo's comedy world tour has recently landed him in England
+                    and he was able to interview world famous singer Ed Sheeran.
+                  </p>
+                  <p>
+                    This discussion with the different backgrounds of louisiana
+                    American and Halifax English is quite refreshing. Though
+                    Theo joked that americans should consider returning, they
+                    both discuss differences in cultures from their personal
+                    experiences.
+                  </p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6 d-flex img-div">
+                <a
+                  href="https://www.youtube.com/watch?v=Guspc7G92Gs"
+                  target="_blank"
+                  title="Watch podcast on YouTube"
+                  class="text-center"
+                >
+                  <img
+                    src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/134/745/original/ed-sheeran-theo-von.jpg?1721629782"
+                    alt="Screenshot of Ed Sheeran and Theo Von This Past Weekend Podcast Thumbnail"
+                    class="img-fluid"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="row mt-5 sean-strickland">
+              <div class="col-12 col-lg-6">
+                <h4>Sean Strickland</h4>
+                <div class="favourite-text">
+                  <p>
+                    In Theo's interview with rising MMA favourite Sean
+                    Strickland, we get to see a different perspective into their
+                    lives.
+                  </p>
+                  <p>
+                    There are many tangents and tales but the true beauty in
+                    Theo's podcasting style is the way he is able to make any
+                    guest feel comfortable to speak their own tale and gives
+                    them the space to breathe without forcing or looking for a
+                    scoop.
+                  </p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6 img-div d-flex">
+                <a
+                  href="https://www.youtube.com/watch?v=SRLljn_GEHk"
+                  target="_blank"
+                  title="Watch podcast on YouTube"
+                  class="text-center"
+                >
+                  <img
+                    src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/134/741/original/sean-stricklan-theo-von.jpg?1721619933"
+                    alt="Screenshot of Sean Strickland and Theo Von This Past Weekend Podcast Thumbnail"
+                    class="img-fluid"
+                  />
+                </a>
+              </div>
+            </div>
+          </section>
+          <section class="spotify">
+            <h3>Listen to the newest episode here</h3>
+            <iframe
+              style="border-radius: 12px"
+              src="https://open.spotify.com/embed/show/6PwE1CIZsgfrhX6Bw96PUN?utm_source=generator"
+              width="100%"
+              height="352"
+              frameborder="0"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              class="podcast-spotify"
+            ></iframe>
+          </section>
+        </main>
+        <footer>
+          <div class="row">
+            <div class="col-4">
+              <a href="https://www.theovon.com/podcast" target="_blank"
+                >Find out more</a
+              >
+            </div>
+            <div class="col-4">
+              <a href="https://www.theovonstore.com" target="_blank"
+                >Theo Von Official Shop</a
+              >
+            </div>
+            <div class="col-4">
+              <a href="https://www.theovon.com/tour" target="_blank"
+                >Tour Dates</a
+              >
             </div>
           </div>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <div class="row">
-        <div class="col-4">
-          <a href="https://www.theovon.com/podcast" target="_blank"
-            >Find out more</a
+        </footer>
+        <div class="credits">
+          This site was coded by
+          <a
+            href="https://karinawong-portfolio-project.netlify.app"
+            target="_blank"
+            title="View my portfolio"
+            >Karina Wong</a
           >
-        </div>
-        <div class="col-4">
-          <a href="https://www.theovonstore.com" target="_blank"
-            >Theo Von Official Shop</a
+          for the
+          <a
+            href="https://www.shecodes.io/contests/favorite-podcast"
+            target="_blank"
+            title="Go to Challenge"
+            >SheCodes Challenge!</a
           >
-        </div>
-        <div class="col-4">
-          <a href="https://www.theovon.com/tour" target="_blank">Tour Dates</a>
         </div>
       </div>
-    </footer>
-    <div class="credits">
-      This site was coded by Karina Wong for the SheCodes Challenge!
     </div>
-    `
   </body>
 </html>
